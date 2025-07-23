@@ -1,0 +1,602 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans',sans-serif;
+    background-color: #f5f5f5;
+    display: block;
+}
+p, li {
+    color: #717070;
+    font-size: 1.3em;
+}
+p a {
+text-decoration: none;
+color:#0006b3;
+}
+.div-center {
+    display: flex;
+    flex-direction: column; /* Arrange items in a single column */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    width: 100%; /* Full width */
+    grid-column: 2 / span 10; /* Keep the grid placement if needed */
+    grid-row: 7; /* Keep the grid placement if needed */
+}
+.table-price {
+    width: 1000px;
+}
+
+/* Heading styling */
+h2 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+    font-weight: bold;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+/* Hover effects */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Table footer */
+tfoot td {
+    text-align: center;
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* Disclaimer Styling */
+p {
+    font-size: 0.95em;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+    color: #e74c3c;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+header {
+    align-items: center;
+    height: 60px;
+}
+.grid-1-1 {
+    grid-column:  span 4;
+    justify-self: start;
+    background-color: #227db9;
+    height: 60px;
+    width: 100%;
+}
+.logo {
+    background-color: #227db9;
+    height: 60px;
+    width: 100%;
+    font-size: 10px;
+    color: #ffffff; 
+    text-align: center;
+}
+.logo h1 {
+    display: flex; 
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+}
+.grid-1-2 {
+  grid-column: 5 / span 3;
+  justify-self: center;
+  height: 60px;
+  width: 100%;
+}
+.grid-1-3 {
+    grid-column: 8 / span 5;
+    align-items: center;
+    background-color: #000000;
+    height: 60px;
+    width: 100%;
+    font-size: 20px;
+    color: #ffffff;
+    
+}
+.menu {
+    background-color: #02080e;
+    height: 60px;
+    display: flex; 
+    align-items: center;
+    justify-content: flex-end; /* Aligns child elements to the right */
+    text-align: center; /* Centers inline or block text content inside the element */
+}
+.menu a {
+    counter-reset: #fff;
+    margin-right: 5px;
+    text-decoration: none;
+    color: #fff;
+    padding-right: 7px;
+    position: relative; /* Needed for the underline effect */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.menu a:hover {
+    color: #0056b3; /* Change to a highlight color on hover */
+}
+.menu a::after {/* Add an underline effect */
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0056b3; /* Highlight color for the underline */
+    transition: width 0.3s ease; /* Smooth underline animation */
+}
+
+.menu a:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+/* END MENU*/
+/* DIV 1*/
+
+.div-1 {
+    grid-column: span 12;
+    grid-row: 1;
+    justify-self: center;
+    width: 100%;
+    height: 110vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('image/Head-image1.jpg');
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    color: #fff;
+}
+.h1white {
+    grid-column: 3 / span 8;
+    grid-row: 1;
+    font-size: 60px;
+    color: #ffffff;
+    text-align: center;
+}
+.h2white {
+    grid-column: 3 / span 8;
+    grid-row: 2;
+    font-size: 40px;
+    color: #ffffff;
+}
+.div-1-div-1 {
+    grid-column: 3 / span 8;
+    grid-row: 3;
+}
+.inline {
+    display: flex; 
+    align-items: center;
+    justify-content: flex-start; /* Aligns child elements to the left */
+    text-align: center; /* Centers inline or block text content inside the element */
+}
+.icon {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 100%;
+    padding: 5px;
+    margin-right: 20px;
+}
+.bullets-text {
+    display: flex; 
+    align-items: center;
+    justify-content: flex-start; /* Aligns child elements to the left */
+    text-align: center; /* Centers inline or block text content inside the element */
+}
+
+/*  DIV 1 END */
+/*  DIV 2 start */
+
+.div-2 {
+    grid-column: 2 / span 10;
+    grid-row: 2;
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+}
+.h2-blue {
+    color: #227db9;
+    text-align: center;
+    font-size: 40px
+}
+.div-2 img {
+    width: 300px;
+    height: 600px;
+    object-fit: cover;
+    float: right;
+    border-radius: 50px;
+    margin-top: 150px; 
+    padding-left: 20px;
+}
+.div-2 div {
+    margin-top: 80px;
+}
+.div-2 div:last-child {
+    margin-bottom: 80px; 
+}
+/*  DIV 2 END */
+/*  DIV 3 start */
+
+.div-3 {
+    grid-column: span 12;
+    grid-row: 3;
+    justify-self: center;
+    width: 100%;
+    height: 110vh;
+    background: linear-gradient( rgba(34, 125, 185, 0.95), rgba(34, 125, 185, 0.95)), url('image/NewBackground.jpg');
+}
+.div-3-div-1 {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 100px auto auto;
+    gap: 10px; /* Add spacing between items */
+}
+.div-3-h2 {grid-column: 3 / span 1;grid-row: 1;justify-self: center;width: 100%;}
+.div-3-1 {grid-column: 2 / span 1;grid-row: 2;justify-self: center;width: 100%;}
+.div-3-2 {grid-column: 3 / span 1;grid-row: 2;justify-self: center;width: 100%;}
+.div-3-3 {grid-column: 4 / span 1;grid-row: 2;justify-self: center;width: 100%;}
+.div-3-4 {grid-column: 2 / span 1;grid-row: 3;justify-self: center;width: 100%;}
+.div-3-5 {grid-column: 3 / span 1;grid-row: 3;justify-self: center;width: 100%;}
+.div-3-6 {grid-column: 4 / span 1;grid-row: 3;justify-self: center;width: 100%;}
+.div-3-h2,.div-3-1,.div-3-2,.div-3-3,.div-3-4,.div-3-5,.div-3-6 {
+    grid-row: auto; /* Keep the original row/column setup */
+    justify-self: center;
+    align-self: center; /* Center the grid item itself within the grid */
+    display: flex; /* Use flexbox to center content inside */
+    flex-direction: column; /* Stack text and images vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    width: 100%; /* Keep the original width */
+    height: 150px;
+    color: #fff;
+    font-size: larger;
+}
+.div-3-h2 {
+    color: #fff;
+    font-size: 50px;
+}
+.div-3-1 img,.div-3-2 img,.div-3-3 img,.div-3-4 img,.div-3-5 img,.div-3-6 img{
+   height: 90px;
+   width: 90px;
+   padding: 9px ;
+}
+/*  DIV 3 END */
+/*  DIV 4 start */
+.div-5 {
+    grid-column: 2 / span 10;
+    grid-row: 5;
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-template-rows: auto auto auto 30px;
+    gap: 10px;
+    place-items: center; /* Centers content horizontally and vertically */
+}
+.div-5-1{grid-column: 2 / span 2;grid-row: 1;justify-self: center;width: 100%;}
+.div-5-2{grid-column: 2 / span 1;grid-row: 2;justify-self: center;width: 100%;}
+.div-5-3{grid-column: 3 / span 1;grid-row: 2;justify-self: center;width: 100%;}
+.div-5-4{grid-column: 2 / span 1;grid-row: 3;justify-self: center;width: 100%;}
+.div-5-5{grid-column: 3 / span 1;grid-row: 3;justify-self: center;width: 100%;}
+.div-5-1, .div-5-2, .div-5-3, .div-5-4, .div-5-5 {
+    justify-self: center;
+    align-self: center; /* Centers the elements inside each grid cell */
+    width: 100%;
+}
+.div-5-1 h3, .div-5-2 h3, .div-5-3 h3, .div-5-4 h3, .div-5-5 h3 {
+    justify-self: center;
+    align-self: center; /* Centers the elements inside each grid cell */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div-5 img {
+    height: auto;
+    width: 100%;
+    object-fit: contain; /* Ensures the image maintains its aspect ratio */
+}
+.div-5-1 button, .div-5-2 button, .div-5-3 button, .div-5-4 button, .div-5-5 button {
+    justify-self: center;
+    align-self: center; /* Centers the elements inside each grid cell */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.div-5-1 button:hover, .div-5-2 button:hover, .div-5-3 button:hover, .div-5-4 button:hover, .div-5-5 button:hover {
+    background-color: #0056b3;
+}
+/*  DIV 5 END */
+/*  DIV 6 start */
+.div-6 {
+    grid-column: span 12;
+    grid-row: 6;
+    justify-self: center;
+    place-items: center; 
+    width: 100%;
+    height: 110vh;
+    background: linear-gradient( rgba(34, 125, 185, 0.95), rgba(34, 125, 185, 0.95));
+}
+.div-6 p, .div-6 h2 {
+    color: white;
+
+}
+/*  DIV 5 END */
+/*  DIV 6 start */
+
+.div-7 {
+    grid-column: 2 / span 10;
+    grid-row: 7;
+    justify-self: center;
+    width: 100%;
+}
+
+.div-8 {
+    grid-column: 2 / span 10;
+    grid-row: 8;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/*CONTACT FORM*/
+.form-container {
+    background: #ffffff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 3px rgba(0, 123, 255, 0.3);
+}
+
+.form-container label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+    display: block;
+}
+
+.form-container textarea {
+    resize: vertical;
+}
+
+.form-container .submit-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-container .submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.form-container p {
+    font-size: 12px;
+    color: #777;
+    margin-top: 15px;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 15px;
+        margin-bottom: 40px;
+    }
+
+    .form-container h2 {
+        font-size: 20px;
+    }
+
+    .form-container input,
+    .form-container select,
+    .form-container textarea {
+        font-size: 12px;
+    }
+
+    .form-container .submit-btn {
+        font-size: 14px;
+    }   
+} 
+/*END CONTACT FORM*/
+/*FOOTER*/
+footer {
+    background-color: #000000;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 50px;
+}
+.copyrigth {  
+    float: right;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+}
+.copyleft {
+    float: left;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+/* .              */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Menu container */
+.menu {
+    position: relative;
+    background-color: #02080e;
+    height: 60px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+/* Menu toggle button */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Menu links container */
+.menu-links {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.menu-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.menu-links a:hover {
+    background-color: #555;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .menu-links {
+        display: none; /* Initially hide the menu */
+        flex-direction: column; /* Stack links vertically */
+        background-color: #333;
+        padding: 10px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+    }
+
+    .menu-links a {
+        padding: 10px 15px;
+        border-bottom: 1px solid #555;
+    }
+
+    .menu-links a:last-child {
+        border-bottom: none;
+    }
+
+    .menu-toggle {
+        display: block; /* Show the toggle button */
+    }
+
+    .menu.active .menu-links {
+        display: flex; /* Show menu when active */
+    }
+}
