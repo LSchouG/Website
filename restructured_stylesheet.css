@@ -1,0 +1,201 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+/* ========================
+   1. Base Styles font, colors, etc.
+======================== */
+.h1White {
+}
+.h2White {
+
+}
+.h2Blue{
+
+}
+
+
+/* ========================
+   2. Header, main, Footer, Forms
+======================== */
+/* HEADER BASE LAYOUT */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #227DB9; /* Optional */
+}
+
+/* LOGO AREA */
+.logoDiv {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+#mainLogo {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* IMAGE */
+.imageDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dImage {
+  object-fit: contain;
+  display: block;
+}
+
+/* MENU */
+.menuDiv {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  min-width: 0;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu a {
+  color: blue;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+/* OPTIONAL: Hide toggle on desktop */
+.menu-toggle {
+  display: none;
+}
+
+.inline {
+    display: flex; 
+    align-items: center;
+    justify-content: flex-start; /* Aligns child elements to the left */
+    text-align: center; /* Centers inline or block text content inside the element */
+}
+.icon {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 100%;
+    padding: 5px;
+    margin-right: 20px;
+}
+
+
+/* RESPONSIVE FIX 
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .dImage {
+    width: 100%;
+    height: auto;
+  }
+}
+*/
+/* ========================
+   3. Components 
+======================== */
+
+
+/* ========================
+   4. Page Sections (div-1–div-8)
+======================== */
+
+/* ========================
+  5. Layout (Grid, Containers)
+======================== */
+/* Grid Body*/
+body {
+display: grid;
+grid-template-columns: 1fr;
+grid-template-areas: 
+  "header"
+  "main"
+  "footer";
+}
+header {grid-area: header;}
+main {grid-area: main;}
+footer {grid-area: footer;}
+/* Grid header*/
+header {
+display: grid;
+grid-template-columns: 30% 40% 30%;
+grid-template-areas: 
+  "logoDiv imageDiv menuDiv";
+}
+logoDiv {grid-area: logoDiv;}
+imageDiv {grid-area: imageDiv;}
+menuDiv {grid-area: menuDiv;}
+/* Grid footer*/
+footer {
+display: grid;
+grid-template-columns: 30% 40% 30%;
+grid-template-areas: 
+  "copyleft . copyright";
+}
+copyleft {grid-area: copyleft;}
+copyright {grid-area: copyright;}
+/* Grid main*/
+main {
+display: grid;
+grid-template-columns: 10% 80% 10%;
+grid-template-areas: 
+  "div1 div1 div1"
+  ". div2 ."
+  "div3 div3 div3"
+  ". div4 ."
+  "div5 div5 div5"
+  ". div6 ."
+  ". div7 .";
+}
+div1 {grid-area: div1;}
+div2 {grid-area: div2;}
+div3 {grid-area: div3;}
+div4 {grid-area: div4;}
+div5 {grid-area: div5;}
+div6 {grid-area: div6;}
+div7 {grid-area: div7;}
+/* ========================
+   6. Media Queries (Responsive)
+======================== */
