@@ -184,7 +184,7 @@ header {
     justify-self: center;
     width: 100%;
     height: 110vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('image/Head-image1.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('image/head-image1.jpg');
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     color: #fff;
@@ -267,7 +267,7 @@ header {
     justify-self: center;
     width: 100%;
     height: 110vh;
-    background: linear-gradient( rgba(34, 125, 185, 0.95), rgba(34, 125, 185, 0.95)), url('image/NewBackground.jpg');
+    background: linear-gradient( rgba(34, 125, 185, 0.95), rgba(34, 125, 185, 0.95)), url('image/newbackground.jpg');
 }
 .div-3-div-1 {
     width: 100%;
