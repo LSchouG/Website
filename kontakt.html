@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="da"> <!-- Angiver dokumenttype og sprog -->
+<head>
+    <meta charset="UTF-8"> <!-- Sætter tegnkodning til UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Gør siden responsiv -->
+    <meta name="description" content="webudvikler"> <!-- Kort beskrivelse til SEO -->
+    <meta name="keywords" content="Hjemmeside, sjælland, app, webudvikler, mm"> <!-- Søgeord til søgemaskiner -->
+    <meta name="author" content="Lars Gregersen"> <!-- Forfatter af hjemmesiden -->
+    <link rel="stylesheet" href="style-sheet.css"> <!-- Link til ekstern CSS-fil -->
+    <title>YourSite Builders</title> <!-- Titel på hjemmesiden -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="grid">
+        <div class="grid-1-1">
+            <div class="logo">
+                 <h1>Webdesign & Digital Markedsføring<br>Lars Schou Gregersen</h1>
+            </div>
+        </div>
+        <img class="grid-1-2" src="image/diagonal.jpg" alt="Baggrundsbillede">
+        <div class="grid-1-3">   
+            <nav class="menu">
+            <a href="index.html">Forside</a>
+            <a href="services.html">Services</a>
+            <a href="portefolje.html">Portefølje</a>
+            <a href="download.html">Download</a>
+            <a href="prisListe.html">Prisliste</a>
+            <a href="kontakt.html">Kontakt</a>
+            </nav>
+        </div>   
+    </header>
+
+    <main class="div-center">
+        <p style="grid-column: span 12; font-size: larger;"><strong>Bemærk:</strong> Dette er en demonstrationsside og ikke en aktiv forretning. Formålet er at vise eksempler på webdesign og prisforslag for små virksomheder.</p>
+
+        <div class="form-container div-center">
+            <h2>Kontakt os</h2>
+            <form method="post" action="">
+                <label for="first-name">Navn</label>
+                <input id="first-name" name="first-name" type="text" placeholder="Indtast dit navn" required />
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="Indtast din email" required />
+
+                <label for="phone">Telefon</label>
+                <input id="phone" type="tel" name="phone" placeholder="Indtast dit telefonnummer" required />
+
+                <label for="website">Hjemmeside</label>
+                <input id="website" name="website" type="url" placeholder="Indtast din hjemmeside (valgfrit)" />
+
+                <label for="referrer">Hvordan hørte du om os?</label>
+                <select id="referrer" name="referrer">
+                    <option value="">(vælg en)</option>
+                    <option value="google">Google</option>
+                    <option value="friend">Ven</option>
+                    <option value="other">Andet</option>
+                </select>
+
+                <label for="comment">Kommentar</label>
+                <textarea id="comment" name="comment" rows="5" placeholder="Skriv din besked her"></textarea>
+
+                <button type="submit" class="submit-btn">Send</button>
+            </form>
+            <p>Vi vender tilbage til dig hurtigst muligt!</p>
+        </div>
+    </main>
+
+    <footer>
+        <p class="copyleft">Email:<a href="websiteappbuilder@example.com">websiteappbuilder@example.com</a></p>
+        <p class="copyrigth">&copy; 2024 Website/App Builder. All rights reserved.</p>
+    </footer>
+ 
+
+    <!-- JavaScript-fil -->
+    <script src="script.js"></script> <!-- Linker til ekstern JavaScript-fil -->
+</body>
+</html>
