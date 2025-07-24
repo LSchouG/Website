@@ -1,0 +1,27 @@
+name: Deploy to Hetzner VPS
+
+on:
+  push:
+    branches:
+      - main  # or 'master' if that's your branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Deploy via SSH
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          cd /var/www/html
+          rm -rf *  # delete old site
+          git clone https://github.com/LarsSchouG/Website.git temp-site
+          cp -r temp-site/* .
+          rm -rf temp-site
