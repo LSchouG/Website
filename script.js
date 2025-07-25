@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // CHANGING TEXT ON RESPONSIVE FUNCTION
   function updateText() {
-    const logoTekst = document.getElementById("mainLogo");
+    const logoTekst = document.getElementById("logoTekst");
     const mainHeading = document.getElementById("mainHeading");
     const iconText1 = document.querySelector("#iconText1");
     const iconText2 = document.querySelector("#iconText2");
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
       iconText5.innerHTML = "WebSite &<br>Applikationer";
       iconText6.innerHTML = "WordPress<br>Hjemmesider";
     } else {
-      logoTekst.innerHTML = "WebSite & Applikatio&n<br>Lars Schou Gregersen";
+      logoTekst.innerHTML = "WebSite & Applikatio&<br>Lars Schou Gregersen";
       mainHeading.innerHTML = "Freelance Website  Applikationer udvikler";
       iconText1.innerHTML = "Tilpasset Webdesign";
       iconText2.innerHTML = "Responsivt Design";
