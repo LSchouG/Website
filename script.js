@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
       iconText5.innerHTML = "WebSite &<br>Applikationer";
       iconText6.innerHTML = "WordPress<br>Hjemmesider";
     } else {
-      logoTekst.innerHTML = "WebSite & Applikation &<br>Lars Schou Gregersen";
-      mainHeading.innerHTML = "Freelance Website  Applikationer udvikler";
+      logoTekst.innerHTML = "WebSite & Applikation <br>Lars Schou Gregersen";
+      mainHeading.innerHTML = "Freelance Website Applikationer udvikler";
       iconText1.innerHTML = "Tilpasset Webdesign";
       iconText2.innerHTML = "Responsivt Design";
       iconText3.innerHTML = "Søgemaskine-<br>optimering (SEO)";
