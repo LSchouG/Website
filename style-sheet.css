@@ -150,10 +150,10 @@ header {
 }
 .menu a {
     counter-reset: #fff;
-    margin-right: 5px;
+    margin-right: 2px;
     text-decoration: none;
     color: #fff;
-    padding-right: 7px;
+    padding-right: 2px;
     position: relative; /* Needed for the underline effect */
     transition: color 0.3s ease; /* Smooth color transition */
 }
@@ -175,6 +175,149 @@ header {
 .menu a:hover::after {
     width: 100%; /* Expand underline on hover */
 }
+/* Menu container */
+.menu {
+    position: relative;
+    background-color: #02080e;
+    height: 60px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+/* Menu toggle button */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Menu links container */
+.menu-links {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.menu-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+}
+/* Stage 1: Desktop – Full menu (≥1224px) */
+@media (min-width: 1224px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .menu-links {
+    display: flex !important;
+  }
+
+  .menu-links a {
+    display: block !important;
+  }
+}
+
+/* Stage 2: Small Desktop – Show 4 links + Hamburger (1024–1223px) */
+@media (max-width: 1223px) and (min-width: 1024px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-links a {
+    display: none;
+  }
+
+  .menu-links a:nth-child(-n+4) {
+    display: inline-block;
+  }
+
+  .menu.active .menu-links a {
+    display: block;
+  }
+
+  .menu-links {
+    flex-direction: row;
+  }
+
+  .menu.active .menu-links {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: #333;
+    padding: 10px;
+    z-index: 1000;
+  }
+}
+
+/* Stage 3: Tablet – Show 3 links + Hamburger (768–1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-links a {
+    display: none;
+  }
+
+  .menu-links a:nth-child(-n+3) {
+    display: inline-block;
+  }
+
+  .menu.active .menu-links a {
+    display: block;
+  }
+
+  .menu-links {
+    flex-direction: row;
+  }
+
+  .menu.active .menu-links {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: #333;
+    padding: 10px;
+    z-index: 1000;
+  }
+}
+
+/* Stage 4: Mobile – Hamburger only (<768px) */
+@media (max-width: 767px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  .menu-links a {
+    display: block;
+    padding: 10px;
+  }
+
+  .menu.active .menu-links {
+    display: flex;
+  }
+}
+
+
 /* END MENU*/
 /* DIV 1*/
 
@@ -508,95 +651,3 @@ footer {
     padding: 0;
 }
 /* .              */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Menu container */
-.menu {
-    position: relative;
-    background-color: #02080e;
-    height: 60px;
-    color: #fff;
-    padding: 0;
-    margin: 0;
-}
-
-/* Menu toggle button */
-.menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    padding: 10px;
-}
-
-/* Menu links container */
-.menu-links {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-}
-
-.menu-links a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-}
-
-.menu-links a:hover {
-    background-color: #555;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .menu-links {
-        display: none; /* Initially hide the menu */
-        flex-direction: column; /* Stack links vertically */
-        background-color: #333;
-        padding: 10px;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        right: 0;
-    }
-
-    .menu-links a {
-        padding: 10px 15px;
-        border-bottom: 1px solid #555;
-    }
-
-    .menu-links a:last-child {
-        border-bottom: none;
-    }
-
-    .menu-toggle {
-        display: block; /* Show the toggle button */
-    }
-
-    .menu.active .menu-links {
-        display: flex; /* Show menu when active */
-    }
-}
