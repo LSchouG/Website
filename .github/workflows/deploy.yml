@@ -13,16 +13,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-- name: Deploy via SSH to Hetzner
-  uses: appleboy/ssh-action@v1.0.3
-  with:
-    host: ${{ secrets.SSH_HOST }}
-    username: ${{ secrets.SSH_USER }}
-    key: ${{ secrets.SSH_PRIVATE_KEY }}
-    passphrase: ${{ secrets.SSH_PASSPHRASE }}  # Add this line if your key has a passphrase; remove if not
-    debug: true  # Adds verbose logging
-    script: |
-      rm -rf /var/www/html/*
-      git clone https://github.com/LSchouG/Website.git temp-site
-      cp -r temp-site/* /var/www/html/
-      rm -rf temp-site
+    - name: Deploy via SSH to Hetzner
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        # Add the passphrase line below only if your SSH key has a passphrase; otherwise, remove it
+        debug: true
+        script: |
+          rm -rf /var/www/html/*
+          git clone https://github.com/LSchouG/Website.git temp-site
+          cp -r temp-site/* /var/www/html/
+          rm -rf temp-site
