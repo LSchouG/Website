@@ -19,15 +19,15 @@ jobs:
 
       - name: Write private key to file
         run: |
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > /tmp/private_key
-          chmod 600 /tmp/private_key
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > $GITHUB_WORKSPACE/private_key
+          chmod 600 $GITHUB_WORKSPACE/private_key
 
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          key_path: /tmp/private_key
+          key_path:  ${{ github.workspace }}/private_key
           port: 22
           debug: true
           script: |
