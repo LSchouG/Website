@@ -16,7 +16,7 @@ jobs:
     - name: Decode and save SSH private key
       run: |
         echo "${{ secrets.SSH_PRIVATE_KEY_B64 }}" | base64 -d > id_ed25519
-        chmod 600 id_ed25519
+        chmod 644 id_ed25519
 
     - name: Deploy to server via SSH
       uses: appleboy/ssh-action@v1.0.3
