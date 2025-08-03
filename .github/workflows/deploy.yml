@@ -18,11 +18,8 @@ jobs:
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        # Add the passphrase line below only if your SSH key has a passphrase; otherwise, remove it
-        passphrase: ${{ secrets.SSH_PASSPHRASE }}
-        # Enables verbose logging for debugging SSH issues
-        debug: true
+        password: ${{ secrets.SSH_PASSWORD }}  # Uses password auth—no keys needed
+        debug: true  # For detailed logs
         script: |
           rm -rf /var/www/html/*
           git clone https://github.com/LSchouG/Website.git temp-site
