@@ -1,29 +1,32 @@
-name: Deploy to Hetzner VPS
+name: Deploy to Server
 
 on:
   push:
     branches:
       - main
 
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-    - name: Deploy via SSH to Hetzner
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-      host: ${{ secrets.SSH_HOST }}
-      username: ${{ secrets.SSH_USER }}
-      key: ${{ secrets.SSH_PRIVATE_KEY }}
-      port: 22
-        script: |
-          rm -rf /var/www/html/*
-          git clone https://github.com/LSchouG/Website.git temp-site
-          cp -r temp-site/* /var/www/html/
-          rm -rf temp-site
-          sudo chown -R www-data:www-data /var/www/html
-          sudo systemctl restart nginx
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            rm -rf /var/www/html/*
+            git clone https://github.com/LSchouG/Website.git temp-site
+            cp -r temp-site/* /var/www/html/
+            rm -rf temp-site
+            sudo chown -R www-data:www-data /var/www/html
+            sudo systemctl restart nginx
