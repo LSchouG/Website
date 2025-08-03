@@ -26,6 +26,8 @@ jobs:
         key_path: ./private_key
         port: 22
         script: |
+          ls -l private_key
+          cat private_key | head -n 2
           echo "✅ CONNECTED"
           rm -rf /var/www/html/*
           git clone https://github.com/LSchouG/Website.git temp-site
