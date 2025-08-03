@@ -14,21 +14,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
-
-      - name: Write SSH private key to file
-        shell: bash
-        run: |
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > /tmp/private_key
-          chmod 600 /tmp/private_key
 
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          key_path: /tmp/private_key
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           debug: true
           script: |
@@ -39,3 +33,4 @@ jobs:
             rm -rf temp-site
             sudo chown -R www-data:www-data /var/www/html
             sudo systemctl restart nginx
+
