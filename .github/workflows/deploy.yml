@@ -26,7 +26,6 @@ jobs:
           port: 22
           debug: true
           script: |
-            echo "✅ CONNECTED"
             rm -rf /var/www/html/*
             git clone https://github.com/LSchouG/Website.git temp-site
             cp -r temp-site/* /var/www/html/
