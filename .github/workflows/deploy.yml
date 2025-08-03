@@ -5,11 +5,6 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-  # Add this to allow access to secrets
-  id-token: write
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -20,16 +15,16 @@ jobs:
 
     - name: Decode and save SSH private key
       run: |
-        echo "${{ secrets.SSH_PRIVATE_KEY_B64 }}" | base64 -d > private_key
-        chmod 600 private_key
-      shell: bash
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY_B64 }}" | base64 -d > ~/.ssh/id_ed25519
+        chmod 600 ~/.ssh/id_ed25519
 
     - name: Deploy to server via SSH
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: 91.98.24.160
         username: larssg
-        key_path: ./private_key
+        key_path: ~/.ssh/id_ed25519
         port: 22
         script: |
           echo "✅ CONNECTED"
