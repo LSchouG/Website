@@ -26,10 +26,9 @@ jobs:
         key_path: ./id_ed25519
         port: 22
         script: |
-          echo "✅ CONNECTED"
-          rm -rf /var/www/html/*
-          git clone https://github.com/LSchouG/Website.git temp-site
-          cp -r temp-site/* /var/www/html/
-          rm -rf temp-site
+          sudo rm -rf /var/www/html/*
+          sudo git clone https://github.com/LSchouG/Website.git temp-site
+          sudo cp -r temp-site/* /var/www/html/
+          sudo rm -rf temp-site
           sudo chown -R www-data:www-data /var/www/html
           sudo systemctl restart nginx
