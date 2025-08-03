@@ -15,16 +15,15 @@ jobs:
 
     - name: Decode and save SSH private key
       run: |
-        mkdir -p $HOME/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY_B64 }}" | base64 -d > $HOME/.ssh/id_ed25519
-        chmod 600 $HOME/.ssh/id_ed25519
+        echo "${{ secrets.SSH_PRIVATE_KEY_B64 }}" | base64 -d > id_ed25519
+        chmod 600 id_ed25519
 
     - name: Deploy to server via SSH
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: 91.98.24.160
         username: larssg
-        key_path: $HOME/.ssh/id_ed25519
+        key_path: ./id_ed25519
         port: 22
         script: |
           echo "✅ CONNECTED"
