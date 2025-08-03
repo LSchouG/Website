@@ -12,20 +12,25 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Write private key to file
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key
+          chmod 600 private_key
 
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key_path: private_key
           port: 22
           debug: true
           script: |
+            echo "✅ CONNECTED"
             rm -rf /var/www/html/*
             git clone https://github.com/LSchouG/Website.git temp-site
             cp -r temp-site/* /var/www/html/
