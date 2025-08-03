@@ -16,11 +16,10 @@ jobs:
     - name: Deploy via SSH to Hetzner
       uses: appleboy/ssh-action@v1.0.3
       with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        passphrase: ${{ secrets.SSH_PASSPHRASE }}  # Add this
-        debug: true
+      host: ${{ secrets.SSH_HOST }}
+      username: ${{ secrets.SSH_USER }}
+      key: ${{ secrets.SSH_PRIVATE_KEY }}
+      port: 22
         script: |
           rm -rf /var/www/html/*
           git clone https://github.com/LSchouG/Website.git temp-site
