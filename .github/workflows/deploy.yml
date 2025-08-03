@@ -18,10 +18,12 @@ jobs:
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
-        password: ${{ secrets.SSH_PASSWORD }}  # Uses password auth—no keys needed
-        debug: true  # For detailed logs
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        debug: true
         script: |
           rm -rf /var/www/html/*
           git clone https://github.com/LSchouG/Website.git temp-site
           cp -r temp-site/* /var/www/html/
           rm -rf temp-site
+          sudo chown -R www-data:www-data /var/www/html
+          sudo systemctl restart nginx
